@@ -6,7 +6,9 @@ import com.Linus.entity.Member;
 
 public class MemberRegistry extends Member {
 
-    List<Member> members = new ArrayList<Member>();
+    List<Member> memberList = new ArrayList<Member>();
+
+
 
     
 
