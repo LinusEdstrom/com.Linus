@@ -11,6 +11,6 @@ public class Horror extends Dvd {
         super(name, price, title, description, lenght);
         this.allowedFromAge = allowedFromAge;
         this.screamScenes = screamScenes;
-        
+
     }
 }
