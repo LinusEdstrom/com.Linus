@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Main {
     static void main(String[] args) {
 
-        System.out.println("add, change, or search members");
+       /* System.out.println("add, change, or search members");
         System.out.println(" List items, search items");
         System.out.println("Rent, return");
         System.out.println("Sum revenues");
@@ -21,20 +21,14 @@ public class Main {
 
         switch (val) {
             case 1:
-                Member addNew = new Member();
-            {
-                System.out.println("member id");
-                addNew.setId(scanner.nextInt());
-                System.out.println("member name");
-                addNew.setName(scanner.next());
-                System.out.println("member status");
-                addNew.setStatus(scanner.next());
 
                 break;
 
-
-            }
-
-
         }
+
+        */
+            Scanner scanner = new Scanner(System.in);
+            MembershipService newMember = new MembershipService();
+            newMember.addMember();
     }
+}
