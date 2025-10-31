@@ -30,5 +30,7 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             MembershipService newMember = new MembershipService();
             newMember.addMember();
+
+
     }
 }

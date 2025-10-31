@@ -10,7 +10,7 @@ public class MembershipService extends Member {
 
     Scanner scanner = new Scanner(System.in);
 
-    public Member addMember(int id, String name, int status);
+    public Member addMember(int id, String name, int status)
     {
         Member newMember = new Member();
 
