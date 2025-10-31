@@ -1,36 +1,49 @@
 package com.Linus;
 
-import java.util.*;
-
 import com.Linus.entity.Member;
-
 import com.Linus.service.MembershipService;
-
+import com.Linus.database.MemberRegistry;
 import java.util.Scanner;
 
 public class Main {
     static void main(String[] args) {
 
-       /* System.out.println("add, change, or search members");
-        System.out.println(" List items, search items");
-        System.out.println("Rent, return");
-        System.out.println("Sum revenues");
+        MemberRegistry memberRegistry = new MemberRegistry();
+        MembershipService membershipService = new MembershipService(memberRegistry);
 
         Scanner scanner = new Scanner(System.in);
-        int val = scanner.nextInt();
+        boolean toMeny = true;
 
-        switch (val) {
-            case 1:
+        while(toMeny) {
+            System.out.println("Menu choices");
 
-                break;
+            int choice = scanner.nextInt();
+
+
+            switch (choice) {
+                case 1: newDude(scanner, membershipService);
+                case 2: toMeny = false;  break;
+            }
+
+
 
         }
 
-        */
-            Scanner scanner = new Scanner(System.in);
-            MembershipService newMember = new MembershipService();
-            newMember.addMember();
+        // Metoder
 
 
-    }
+
+
+
 }
+
+    private static void newDude(Scanner scanner, MembershipService membershipService) {
+        System.out.println("member Id");
+        int id = scanner.nextInt();
+        System.out.println("member Name");
+        String name = scanner.next();
+        System.out.println("member Status");
+        int status = scanner.nextInt();
+        Member member = membershipService.addMember(id, name, status);
+    }
+    }

@@ -1,18 +1,34 @@
 package com.Linus.service;
 
+
+
+import com.Linus.database.MemberRegistry;
 import com.Linus.entity.Member;
 
 import java.util.*;
 
-public class MembershipService extends Member {
+public class MembershipService {
 
-    public MembershipService(){}
+    private final MemberRegistry memberRegistry;
 
-    Scanner scanner = new Scanner(System.in);
+    //constructors
+
+    public MembershipService(MemberRegistry memberRegistry){
+        this.memberRegistry = memberRegistry;
+    }
+
+    //Metoder
+
+    public Member addMember(int id, String name, int status){
+        return memberRegistry.createAndAddMember(id, name, status);
+
+
+
+    /*Scanner scanner = new Scanner(System.in);
 
     public Member addMember(int id, String name, int status)
     {
-        Member newMember = new Member();
+        /*Member newMember = new Member();
 
         System.out.println("Member Id");
         newMember.setId(scanner.nextInt());
@@ -21,6 +37,11 @@ public class MembershipService extends Member {
         System.out.println("Member Status");
         newMember.setStatus(scanner.nextInt());
         return newMember;
+
+         */
+
+
+
 
     }
 

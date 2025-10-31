@@ -1,5 +1,7 @@
 package com.Linus.entity;
 
+import com.Linus.database.MemberRegistry;
+
 public class Member {
 
     private int id;
@@ -34,4 +36,8 @@ public class Member {
         this.status = status;
     }
     public void history(){}
-}
+
+
+
+    }
+
