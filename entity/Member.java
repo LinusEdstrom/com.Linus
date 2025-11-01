@@ -1,21 +1,23 @@
 package com.Linus.entity;
 
 import com.Linus.database.MemberRegistry;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Member {
 
     private int id;
     private String name;
-    private int status;
+    private int statusLevel;
 
     //konstruktorer
 
     public Member(){}
 
-    public Member(int id, String name, int status) {
+    public Member(int id, String name, int statusLevel) {
         this.id = id;
         this.name = name;
-        this.status = status;
+        this.statusLevel = statusLevel;
     }
     public int getId(){
         return id;
@@ -29,15 +31,12 @@ public class Member {
     public void setName(String name){
         this.name = name;
     }
-    public int getStatus(){
-        return status;
-    }
-    public void setStatus(int status){
-        this.status = status;
-    }
+    public int getStatusLevel(){return statusLevel;}
+    public void setStatusLevel(int statusLevel) {this.statusLevel = statusLevel;}
     public void history(){}
 
 
 
     }
+
 

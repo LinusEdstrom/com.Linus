@@ -9,6 +9,8 @@ import java.util.*;
 
 public class MembershipService {
 
+    // MemberRegistry går bara nå härifrån och går inte ärva från någon annanstans.
+    // Går göra om MemberService till ett memberRegistry objekt.
     private final MemberRegistry memberRegistry;
 
     //constructors
@@ -19,8 +21,8 @@ public class MembershipService {
 
     //Metoder
 
-    public Member addMember(int id, String name, int status){
-        return memberRegistry.createAndAddMember(id, name, status);
+    public Member addMember(String name, int statusLevel){
+        return memberRegistry.createAndAddMember(name, statusLevel);
 
 
 
@@ -44,6 +46,10 @@ public class MembershipService {
 
 
     }
+        public List<Member> listAllMembers(){
+        return memberRegistry.listMembers();
+        }
+
 
             }
 

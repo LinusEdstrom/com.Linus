@@ -21,8 +21,9 @@ public class Main {
 
 
             switch (choice) {
-                case 1: newDude(scanner, membershipService);
-                case 2: toMeny = false;  break;
+                case 1: newDude(scanner, membershipService); break;
+                case 2: listAllMembers(membershipService); break;
+                case 3: toMeny = false;  break;
             }
 
 
@@ -38,12 +39,18 @@ public class Main {
 }
 
     private static void newDude(Scanner scanner, MembershipService membershipService) {
-        System.out.println("member Id");
-        int id = scanner.nextInt();
         System.out.println("member Name");
         String name = scanner.next();
         System.out.println("member Status");
         int status = scanner.nextInt();
-        Member member = membershipService.addMember(id, name, status);
+        Member member = membershipService.addMember(name, status);
     }
+    private static void listAllMembers(MembershipService membershipService) {
+        for(Member allMembers : membershipService.listAllMembers()) {
+            System.out.println("Yo fakker " + allMembers.getId()); }
+
+    }
+
+
+
     }
