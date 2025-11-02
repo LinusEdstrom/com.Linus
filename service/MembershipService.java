@@ -21,12 +21,27 @@ public class MembershipService {
 
     //Metoder
 
-    public Member addMember(String name, int statusLevel){
+        public Member addMember(String name, int statusLevel){
         return memberRegistry.createAndAddMember(name, statusLevel);
+        }
+        public List<Member> listAllMembers(){
+        return memberRegistry.listMembers();
+        }
+        public boolean lookForMember(String name){
+        List<Member> allMembers = listAllMembers();
+        List<String> allMemberNames = new ArrayList<>();
+        for(Member member : allMembers){allMemberNames.add(member.getName());}
+        return allMemberNames.contains(name);
+        }
+        }
 
 
 
-    /*Scanner scanner = new Scanner(System.in);
+
+
+
+
+        /*Scanner scanner = new Scanner(System.in);
 
     public Member addMember(int id, String name, int status)
     {
@@ -41,22 +56,6 @@ public class MembershipService {
         return newMember;
 
          */
-
-
-
-
-    }
-        public List<Member> listAllMembers(){
-        return memberRegistry.listMembers();
-        }
-
-
-            }
-
-
-
-
-
 
 
 
