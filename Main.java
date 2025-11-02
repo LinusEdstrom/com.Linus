@@ -65,6 +65,6 @@ public class Main {
             membershipService.addMember("KentJesus", 1);
             membershipService.addMember("Majken", 2);
         }
-        
+
 
     }
