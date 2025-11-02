@@ -1,9 +1,15 @@
 package com.Linus;
 
+import com.Linus.database.Inventory;
+import com.Linus.entity.Action;
+import com.Linus.entity.Dvd;
+import com.Linus.entity.Item;
 import com.Linus.entity.Member;
 import com.Linus.service.MembershipService;
 import com.Linus.database.MemberRegistry;
+import com.Linus.service.RentalService;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,6 +20,8 @@ public class Main {
 
         MemberRegistry memberRegistry = new MemberRegistry();
         MembershipService membershipService = new MembershipService(memberRegistry);
+        Inventory inventory = new Inventory();
+        RentalService rentalService = new RentalService(inventory);
         fillMemberList(membershipService);
 
         Scanner scanner = new Scanner(System.in);
@@ -29,7 +37,8 @@ public class Main {
                 case 1: newDude(scanner, membershipService); break;
                 case 2: listAllMembers(membershipService); break;
                 case 3: searchMember(scanner, membershipService); break;
-                case 4: toMeny = false;  break;
+                case 4: addNewAction(scanner, rentalService); break;
+                case 5: toMeny = false;  break;
             }
 
         }
@@ -54,7 +63,7 @@ public class Main {
         private static void searchMember(Scanner scanner, MembershipService membershipService) {
         System.out.println("member Name");
         String name = scanner.next();
-        boolean exist =membershipService.lookForMember(name);
+        boolean exist = membershipService.lookForMember(name);
         if(exist) {System.out.println("Member exists");
         }else{System.out.println("Member does not exist");}
     }
@@ -64,7 +73,36 @@ public class Main {
             membershipService.addMember("Thor", 3);
             membershipService.addMember("KentJesus", 1);
             membershipService.addMember("Majken", 2);
+    }
+        /*private static void addNewItem(Scanner scanner, RentalService rentalService) {
+            System.out.println("Item name");
+            String name = scanner.next();
+            System.out.println("Item price");
+            int price = scanner.nextInt();
+            System.out.println("Item title");
+            String title = scanner.next();
+            System.out.println("Item description");
+            String description = scanner.next();
+            System.out.println("Item length");
+            int length = scanner.nextInt();
+            Dvd dvd = rentalService.addItem(name, price, title, description, length);
         }
 
+         */
+        private static void addNewAction(Scanner scanner, RentalService rentalService) {
+            Action action = new Action();
+            System.out.println("Item name");
+            action.setName(scanner.next());
+            System.out.println("Item price");
+            action.setPrice(scanner.nextInt());
+            System.out.println("Item title");
+            action.setTitle(scanner.next());
+            System.out.println("Item description");
+            action.setDescription(scanner.next());
+            System.out.println("Item length");
+            action.setLength(scanner.nextInt());
+            System.out.println("Item explosions");
+            rentalService.addAction();
+        }
 
     }

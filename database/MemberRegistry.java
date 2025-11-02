@@ -16,7 +16,7 @@ public class MemberRegistry {
 
     //Metoder
 
-    public Member createAndAddMember(String name, int statusLevel){
+        public Member createAndAddMember(String name, int statusLevel){
         int id = nextId++;
         Member member = new Member(id, name, statusLevel);
         // Lite oklart om man lägger id och member i memberList när member just fått värdet från int id ?

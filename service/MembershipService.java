@@ -33,6 +33,7 @@ public class MembershipService {
         for(Member member : allMembers){allMemberNames.add(member.getName());}
         return allMemberNames.contains(name);
         }
+
         }
 
 
