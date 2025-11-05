@@ -27,6 +27,7 @@ public class MembershipService {
         public List<Member> listAllMembers(){
         return memberRegistry.listMembers();
         }
+
         public boolean lookForMember(String name){
         List<Member> allMembers = listAllMembers();
         List<String> allMemberNames = new ArrayList<>();

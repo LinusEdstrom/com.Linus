@@ -8,6 +8,8 @@ public class Dvd extends Item {
     private String description;
     private int length;
 
+    public Dvd() {}
+
     public Dvd (String name, int price, String title, String description, int length)
         {super(name,price);
         this.title =title;
